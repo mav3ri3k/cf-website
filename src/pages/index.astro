@@ -1,0 +1,109 @@
+---
+import Welcome from '../components/Welcome.astro';
+import Header from '../components/Header.astro';
+import Project from '../components/Project.astro';
+import Layout from '../layouts/Layout.astro';
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+ <div class="container">
+        <div class="blog-title">Apurva Mishra</div>
+        <div class="blog-posts">
+            <Project
+                name="Explain the Chess Move"
+                about="Build a neuron description database for transformer based Chess Engine. We are using a GPT-4 as an explainer model to describe neurons in transformer heads. This synthetic data will be used to fine-tune a much smaller llm for task-specific needs"
+                time="Ongoing"
+            />
+            <Project
+                name="Google Summer of Code 2024: The Rust Organization"
+                url="https://github.com/mav3ri3k/rust/tree/gsoc24"
+                about="Add experimental support to Rust Compiler for building and running procedural macros as WebAssembly. Procedural Macro crates can opt-in to be compiled into WebAssembly. This wasm-proc-macro will be a WASM blob sandboxed using WASM. It will interact with the compiler only through a stream of tokens and will not be able to interact with the outside world."
+                time="May 2024 – Oct 2024"
+            />
+            <Project
+                name="Project Intern"
+                about=" Three projects were undertaken namely, ‘PDF Similarity, ‘Web Crawler’ and ‘Search Parser’ which aim to reduce redundant documents, help index web data, and find relevant information"
+                time="Dec 2023 – Jan 2024"
+            />
+        </div>
+    </div>
+    <style :is:global>
+@font-face {
+  font-family: 'Excalifont-Regular';
+  src: url('/fonts/Excalifont-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+        :root {
+            --background-color: #3c6baa;
+            --accent-color: #c5d0e5;  
+
+            --grid-line-thickness: 1px; 
+            --grid-line-spacing: 10px; 
+            --grid-line-opacity: 0.1; 
+
+     font-family: 'Excalifont-Regular', sans-serif;   
+        }
+        body {
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+            color: var(--accent-color);
+            background-image:
+                linear-gradient(0deg, transparent calc(var(--grid-line-spacing) - var(--grid-line-thickness)), rgba(255, 255, 255, var(--grid-line-opacity)) var(--grid-line-spacing)),
+                linear-gradient(90deg, transparent calc(var(--grid-line-spacing) - var(--grid-line-thickness)), rgba(255, 255, 255, var(--grid-line-opacity)) var(--grid-line-spacing));
+            background-size: var(--grid-line-spacing) var(--grid-line-spacing);
+        }
+        header {
+            background-color: var(--background-color);
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        header h2 {
+            margin: 10px 0 0;
+            font-size: 18px;
+            font-weight: normal;
+        }
+        .social-links {
+            display: inline-flex;
+            gap: 10px;
+            margin-left: 10px;
+        }
+        .social-links a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        .social-links svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+        .container {
+            padding: 20px;
+        }
+        .blog-title {
+            font-size: 50px;
+            font-weight: bolder;
+            text-align: center;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-color);
+        }
+        .blog-posts {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+    </style>
+</Layout>

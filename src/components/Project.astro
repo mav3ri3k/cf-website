@@ -1,0 +1,61 @@
+---
+interface Props {
+  name?: string;
+  url?: string;
+  about?: string;
+  time?: string;
+}
+
+const { name, url, about, time } = Astro.props;
+
+---
+
+<div class="blog-post">
+    <div class="content">
+        <h3>
+            {url ? <a href={url}>{name}</a> : name}
+        </h3>
+        <p>{about}</p>
+    </div>
+    { time == "Ongoing" ? <div class="author" style={{ color: '#b8d6cb', fontWeight: 'bolder' }}>{time}</div>: 
+    <div class="author">{time}</div>}
+</div>
+
+<style>
+    .blog-post {
+        padding: 20px;
+        width: 300px;
+        border: 2px dashed var(--accent-color);
+
+        display: flex;
+        flex-direction: column;
+    }
+    .blog-post h3 a {
+        margin: 0 0 10px;
+        font-size: 20px;
+        font-weight: bold;
+        color: var(--accent-color);
+        text-decoration: none;
+        /*text-decoration: underline;*/
+    }
+    .content {
+        flex: 1; 
+    }
+    .blog-post h3 a:hover {
+        color: #a4afc3;
+    }
+    .blog-post p {
+        margin: 0;
+        font-size: 14px;
+        color: var(--accent-color);
+    }
+    .blog-post .author {
+        margin-top: 10px;
+        font-size: 12px;
+        text-align: right;
+        color: var(--accent-color);
+    }
+    .author {
+        margin-top: auto;
+    }
+</style>
